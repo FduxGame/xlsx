@@ -593,11 +593,11 @@ func readRowsFromSheet(Worksheet *xlsxWorksheet, file *File, sheet *Sheet, rowLi
 			insertRowIndex++
 		}
 		// range is not empty and only one range exist
-		if len(rawrow.Spans) != 0 && strings.Count(rawrow.Spans, cellRangeChar) == 1 {
-			row = makeRowFromSpan(rawrow.Spans, sheet)
-		} else {
+		//if len(rawrow.Spans) != 0 && strings.Count(rawrow.Spans, cellRangeChar) == 1 {
+		//	row = makeRowFromSpan(rawrow.Spans, sheet)
+		//} else {
 			row = makeRowFromRaw(rawrow, sheet)
-		}
+		//}
 
 		row.Hidden = rawrow.Hidden
 		height, err := strconv.ParseFloat(rawrow.Ht, 64)
